@@ -24,25 +24,6 @@ function BusinessPage(props) {
         document.title = business?.name;
     }, []);
 
-
-    if (business?.websiteURL == '') {
-        if (business?.etsyURL == '') {
-            var websiteLink = business?.facebookURL
-            var websiteImagePath = '/images/facebook-logo.png'
-            var websiteTypeText = 'Facebook'
-        }
-        else {
-            websiteLink = business?.etsyURL
-            websiteImagePath = '/images/etsy-logo.png'
-            websiteTypeText = 'Etsy'
-        }
-    }
-    else {
-        websiteLink = business?.websiteURL
-        websiteImagePath = '/images/website_logo.png'
-        websiteTypeText = 'Website'
-    }
-
     return (
         <>
             <div className='Jumbotron'>
@@ -68,19 +49,51 @@ function BusinessPage(props) {
                                 <br></br>
                             }
 
-                            {/* <!-- * Website Link --> */}
-                            <div className='businessLinkPic'>
-                                <img src={websiteImagePath} className='linkLogosPage' alt='' />
-                                <div className='businessLinkText'>
-                                    <p id='informationTextLinks'><a href={websiteLink} target='_blank' rel='noopener noreferrer'
-                                        className='businessLinks'>{business?.name} {websiteTypeText}</a></p>
-                                </div>
-                            </div>
-                            <br></br>
+                            {/* <!-- * IF they have a Website Link --> */}
+                            {(business?.websiteURL != '') &&
+                                <>
+                                    <div className='businessLinkPic'>
+                                        <img src='/images/website_logo.png' className='linkLogosPage' alt='' />
+                                        <div className='businessLinkText'>
+                                            <p id='informationTextLinks'><a href={business?.websiteURL} target='_blank' rel='noopener noreferrer'
+                                                className='businessLinks'>{business?.name} Website</a></p>
+                                        </div>
+                                    </div>
+                                </>
+                            }
+
+                            {/* <!-- * IF they have a Facebook Link --> */}
+                            {(business?.facebookURL != '') &&
+                                <>
+                                    <br></br>
+                                    <div className='businessLinkPic'>
+                                        <img src='/images/facebook-logo.png' className='linkLogosPage' alt='' />
+                                        <div className='businessLinkText'>
+                                            <p id='informationTextLinks'><a href={business?.facebookURL} target='_blank' rel='noopener noreferrer'
+                                                className='businessLinks'>{business?.name} Facebook</a></p>
+                                        </div>
+                                    </div>
+                                </>
+                            }
+
+                            {/* <!-- * IF they have an Etsy Link --> */}
+                            {(business?.etsyURL != '') &&
+                                <>
+                                    <br></br>
+                                    <div className='businessLinkPic'>
+                                        <img src='/images/etsy-logo.png' className='linkLogosPage' alt='' />
+                                        <div className='businessLinkText'>
+                                            <p id='informationTextLinks'><a href={business?.etsyURL} target='_blank' rel='noopener noreferrer'
+                                                className='businessLinks'>{business?.name} Etsy</a></p>
+                                        </div>
+                                    </div>
+                                </>
+                            }
 
                             {/* <!-- * Instagram Section --> ONLY SHOW IF THEY HAVE AN INSTAGRAM */}
                             {(business?.instagramURL != '') &&
                                 <>
+                                    <br></br>
                                     <div className='businessLinkPic'>
                                         <img src='/images/instagramlogo.png' className='linkLogosPage' alt='' />
                                         <div className='businessLinkText'>
@@ -104,6 +117,7 @@ function BusinessPage(props) {
                                 </>
                             }
 
+                            {/* IF they have a public email */}
                             {(business?.publicEmail != '') &&
                                 <>
                                     <br></br>
@@ -119,7 +133,7 @@ function BusinessPage(props) {
                             <br></br>
                             <br></br>
 
-                            {/* If they have a description for their phone number (in other words, a location name), display it */}
+                            {/* IF they have a description for their phone number (in other words, a location name), display it */}
                             {(business?.phoneNumberDescription != '') &&
                                 <h3>{business?.phoneNumberDescription}</h3>
                             }

@@ -427,7 +427,7 @@ module.exports = [
         websiteURL: '',
         facebookURL: 'https://www.facebook.com/Glamour-Events-514389265312116',
         etsyURL: '',
-        instagramURL: 'https://www.instagram.com/emma_glamourevents/',
+        instagramURL: '',
         instagramUsername: 'emma_glamourevents',
         instagramURL2: '',
         instagramUsername2: '',

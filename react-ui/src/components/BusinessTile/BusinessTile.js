@@ -47,11 +47,11 @@ function BusinessTile(props, { filterItem }) {
                 </div>
             </div>
 
-            <br></br>
 
             {/* <!-- * Instagram Section --> ONLY SHOW IF THEY HAVE AN INSTAGRAM */}
             {(props.instagramURL != '') &&
                 <>
+                    <br></br>
                     <div className='businessLinkPic'>
                         <img src='/images/instagramlogo.png' className='linkLogos' alt='' />
                         <div className='businessLinkText'>
