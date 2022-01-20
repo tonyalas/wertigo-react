@@ -194,6 +194,8 @@ function BusinessPage(props) {
                                         {business?.hoursDays?.third} <b>{business?.hoursTimes?.third}</b>
                                         <br></br>
                                         {business?.hoursDays?.fourth} <b>{business?.hoursTimes?.fourth}</b>
+                                        <br></br>
+                                        {business?.hoursDays?.fifth} <b>{business?.hoursTimes?.fifth}</b>
                                     </p>
 
                                 </>

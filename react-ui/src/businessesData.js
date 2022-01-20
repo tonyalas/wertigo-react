@@ -26,7 +26,21 @@ module.exports = [
         googleMapsLink2: '',
         embeddedMapsLink: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2950.7505262784157!2d-82.98329128450203!3d42.30518834655751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883b2b7de132c14f%3A0x2f7136b133287375!2sValantina%20Salon!5e0!3m2!1sen!2sca!4v1642699961748!5m2!1sen!2sca',
         embeddedMapsLink2: '',
-        hasHours: false,
+        hasHours: true,
+        hoursDays: {
+            first: 'Sunday - Monday:',
+            second: 'Tuesday:',
+            third: 'Wednesday - Thursday:',
+            fourth: 'Friday',
+            fifth: 'Saturday'
+        },
+        hoursTimes: {
+            first: 'Closed',
+            second: '9:30am to 3pm',
+            third: '9:30am to 5:30pm',
+            fourth: '9:30am to 7pm',
+            fifth: '9:30am to 5pm'
+        },
     },
     {
         id: 1,
@@ -55,7 +69,7 @@ module.exports = [
         embeddedMapsLink2: '',
         hasHours: true,
         hoursDays: {
-            first: 'Sunday to Monday:',
+            first: 'Sunday - Monday:',
             second: 'Tuesday - Friday:',
             third: 'Saturday:'
         },
