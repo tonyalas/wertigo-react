@@ -78,14 +78,18 @@ function BusinessPage(props) {
                             </div>
                             <br></br>
 
-                            {/* <!-- * Instagram Section --> */}
-                            <div className='businessLinkPic'>
-                                <img src='/images/instagramlogo.png' className='linkLogosPage' alt='' />
-                                <div className='businessLinkText'>
-                                    <p id='informationTextLinks'><a href={business?.instagramURL} target='_blank'
-                                        rel='noopener noreferrer' className='businessLinks'>@{business?.instagramUsername}</a></p>
-                                </div>
-                            </div>
+                            {/* <!-- * Instagram Section --> ONLY SHOW IF THEY HAVE AN INSTAGRAM */}
+                            {(business?.instagramURL != '') &&
+                                <>
+                                    <div className='businessLinkPic'>
+                                        <img src='/images/instagramlogo.png' className='linkLogosPage' alt='' />
+                                        <div className='businessLinkText'>
+                                            <p id='informationTextLinks'><a href={business?.instagramURL} target='_blank'
+                                                rel='noopener noreferrer' className='businessLinks'>@{business?.instagramUsername}</a></p>
+                                        </div>
+                                    </div>
+                                </>
+                            }
 
                             {/* ONLY SHOW SECOND INSTAGRAM IF THERE IS TWO */}
                             {(business?.instagramURL2 != '') &&

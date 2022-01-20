@@ -12,7 +12,7 @@ module.exports = [
         phoneNumberDescription: '',
         phoneNumber2: '',
         phoneNumberDescription2: '',
-        publicEmail: 'glam2events@yahoo.com',
+        publicEmail: '',
         websiteURL: 'http://valantinasalon.com',
         facebookURL: 'https://www.facebook.com/valantinasalon/',
         etsyURL: '',

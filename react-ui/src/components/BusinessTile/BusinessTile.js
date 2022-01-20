@@ -48,14 +48,19 @@ function BusinessTile(props, { filterItem }) {
             </div>
 
             <br></br>
-            {/* <!-- * Instagram Section --> */}
-            <div className='businessLinkPic'>
-                <img src='/images/instagramlogo.png' className='linkLogos' alt='' />
-                <div className='businessLinkText'>
-                    <p><a href={props.instagramURL} target='_blank'
-                        rel='noopener noreferrer' className='businessLinks'>@{props.instagramUsername}</a></p>
-                </div>
-            </div>
+
+            {/* <!-- * Instagram Section --> ONLY SHOW IF THEY HAVE AN INSTAGRAM */}
+            {(props.instagramURL != '') &&
+                <>
+                    <div className='businessLinkPic'>
+                        <img src='/images/instagramlogo.png' className='linkLogos' alt='' />
+                        <div className='businessLinkText'>
+                            <p><a href={props.instagramURL} target='_blank'
+                                rel='noopener noreferrer' className='businessLinks'>@{props.instagramUsername}</a></p>
+                        </div>
+                    </div>
+                </>
+            }
 
             {/* ONLY SHOW SECOND INSTAGRAM IF THERE IS TWO */}
             {(props.instagramURL2 != '') &&
