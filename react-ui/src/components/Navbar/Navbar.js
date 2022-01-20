@@ -13,10 +13,10 @@ function Navbar() {
                     <NavbarRB.Toggle aria-controls='basic-navbar-nav' />
                     <NavbarRB.Collapse id='basic-navbar-nav'>
                         <Nav className='me-auto'>
-                            <Link to='/'><Nav.Link href='/'>Home</Nav.Link></Link>
-                            <Link to='/discover'><Nav.Link href='/discover'>Discover</Nav.Link></Link>
-                            <Link to='/contactus'><Nav.Link href='/contactus'>Add Your Business</Nav.Link></Link>
-                            <Link to='/faq'><Nav.Link href='/faq'>FAQ</Nav.Link></Link>
+                            <Link to='/' id='links'><Nav.Link href='/' id='links'>Home</Nav.Link></Link>
+                            <Link to='/discover' id='links'><Nav.Link href='/discover' id='links'>Discover</Nav.Link></Link>
+                            <Link to='/contactus' id='links'><Nav.Link href='/contactus' id='links'>Add Your Business</Nav.Link></Link>
+                            <Link to='/faq' id='links'><Nav.Link href='/faq' id='links'>FAQ</Nav.Link></Link>
                         </Nav>
                     </NavbarRB.Collapse>
                 </Container>
