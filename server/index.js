@@ -27,17 +27,22 @@ app.use((req, res, next) => {
 
 // Middleware
 //app.use(express.static('react-ui/build'))
+const pathFile = require('path');
+app.use(express.static(pathFile.join(__dirname, 'build')));
 
-if (process.env.NODE_ENV === 'production') {
-    // Express will serve up production assets
-    app.use(express.static('react-ui/build'));
+app.get('/*', function (req, res) {
+    res.sendFile(pathFile.join(__dirname, 'react-ui', 'build', 'index.html'));
+});
 
-    // Express serve up index.html file if it doesn't recognize route
-    const path = require('path');
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'react-ui', 'build', 'index.html'));
-    });
-}
+// if (process.env.NODE_ENV === 'production') {
+//     // Express will serve up production assets
+//     app.use(express.static('react-ui/build'));
+
+//     // Express serve up index.html file if it doesn't recognize route
+//     app.get('*', (req, res) => {
+//         res.sendFile(path.resolve(__dirname, 'react-ui', 'build', 'index.html'));
+//     });
+// }
 
 app.use('/images', express.static('images'));
 //app.use('/public/businessPages', express.static('public/businessPages'));
