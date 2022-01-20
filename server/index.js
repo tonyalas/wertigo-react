@@ -26,17 +26,25 @@ app.use((req, res, next) => {
 */
 
 // Middleware
-app.use(express.static('react-ui/build'))
+//app.use(express.static('react-ui/build'))
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV == 'production') {
     // Express will serve up production assets
-    app.use(express.static('react-ui/build'));
+    //app.use(express.static('react-ui/build'));
+
+    const path = require('path');
+    // Priority serve any static files.
+    app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
+
+    // All remaining requests return the React app, so it can handle routing.
+    app.get('*', function (request, response) {
+        response.sendFile(path.resolve(__dirname, '../react-ui/build', 'index.html'));
+    });
 
     // Express serve up index.html file if it doesn't recognize route
-    const path = require('path');
-    app.get('/*', (req, res) => {
-        res.sendFile(path.join(__dirname, 'react-ui', 'build', 'index.html'));
-    });
+    // app.get('/*', (req, res) => {
+    //     res.sendFile(path.join(__dirname, 'react-ui', 'build', 'index.html'));
+    // });
 }
 
 app.use('/images', express.static('images'));
