@@ -54,7 +54,7 @@ function FAQMainBody() {
                         <h1>Can I edit or remove my business from Wertigo?</h1>
                         <div className='block-text'>
                             <p>Also of course! If you wish to edit any details or remove your business from Wertigo, simply
-                                fill out the first form on the <a href='/contactus'>Contact Us</a> page or email us <a href='mailto:wertigosupport@gmail.com'>here. Testing 123</a></p>
+                                fill out the first form on the <a href='/contactus'>Contact Us</a> page or email us <a href='mailto:wertigosupport@gmail.com'>here. Testing 1234</a></p>
                         </div>
                     </div>
                 </div>
