@@ -3,20 +3,24 @@ import { Link } from 'react-router-dom';
 import NavbarRB from 'react-bootstrap/Navbar';
 import { Container } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
+import { useState } from 'react';
 
 function Navbar() {
+
+    const [expanded, setExpanded] = useState(false);
+
     return (
         <div>
-            <NavbarRB className='navbar-light bg-light' expand='lg'>
+            <NavbarRB className='navbar-light bg-light' expand='lg' expanded={expanded}>
                 <Container fluid>
                     <NavbarRB.Brand href='/'>Wertigo</NavbarRB.Brand>
-                    <NavbarRB.Toggle aria-controls='basic-navbar-nav' />
+                    <NavbarRB.Toggle aria-controls='basic-navbar-nav' onClick={() => setExpanded(expanded ? false : 'expanded')} />
                     <NavbarRB.Collapse id='basic-navbar-nav'>
                         <Nav className='me-auto'>
-                            <Link to='/' id='links'><Nav.Link href='/' id='links'>Home</Nav.Link></Link>
-                            <Link to='/discover' id='links'><Nav.Link href='/discover' id='links'>Discover</Nav.Link></Link>
-                            <Link to='/contactus' id='links'><Nav.Link href='/contactus' id='links'>Add Your Business</Nav.Link></Link>
-                            <Link to='/faq' id='links'><Nav.Link href='/faq' id='links'>FAQ</Nav.Link></Link>
+                            <Link to='/' id='links' onClick={() => setExpanded(false)}><Nav.Link href='/' id='links'>Home</Nav.Link></Link>
+                            <Link to='/discover' id='links' onClick={() => setExpanded(false)}><Nav.Link href='/discover' id='links'>Discover</Nav.Link></Link>
+                            <Link to='/contactus' id='links' onClick={() => setExpanded(false)}><Nav.Link href='/contactus' id='links'>Add Your Business</Nav.Link></Link>
+                            <Link to='/faq' id='links' onClick={() => setExpanded(false)}><Nav.Link href='/faq' id='links'>FAQ</Nav.Link></Link>
                         </Nav>
                     </NavbarRB.Collapse>
                 </Container>
