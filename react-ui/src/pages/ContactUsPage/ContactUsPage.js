@@ -108,12 +108,12 @@ function ContactUsPage() {
                             <h1>Do you own a business?</h1>
                             <p>We want to have you join us! Please fill out the form below and we will act quickly to add your
                                 business to Wertigo.</p>
-                            {formSubmissionStatus == 'success' &&
+                            {/* {formSubmissionStatus == 'success' &&
                                 <Alert variant='success'>Email sent!</Alert>
                             }
                             {formSubmissionStatus == 'error' &&
                                 <Alert variant='warning'>Uh oh! Something went wrong. Please try again.</Alert>
-                            }
+                            } */}
                         </div>
                     </div>
                 </div>
@@ -258,6 +258,13 @@ function ContactUsPage() {
                         </div>
                         <br></br>
                         <div className='centeredText'>
+                            {/* Display a SUCCESS or OOPS message depending on what the outcome is */}
+                            {formSubmissionStatus == 'success' &&
+                                <Alert variant='success'>Email sent!</Alert>
+                            }
+                            {formSubmissionStatus == 'error' &&
+                                <Alert variant='warning'>Uh oh! Something went wrong. Please try again.</Alert>
+                            }
                             <button type='submit' value='submit' className='btn btn-primary submit' disabled={status == 'Sending...'}>
                                 {status}
                             </button>
@@ -273,12 +280,12 @@ function ContactUsPage() {
                         <div className='centeredText'>
                             <h1>Know someone else with a business?</h1>
                             <p>If you don't own a business yourself, fill out the form below to recommend a local business!</p>
-                            {formSubmissionUserStatus == 'success' &&
+                            {/* {formSubmissionUserStatus == 'success' &&
                                 <Alert variant='success'>Email sent!</Alert>
                             }
                             {formSubmissionUserStatus == 'error' &&
                                 <Alert variant='warning'>Uh oh! Something went wrong. Please try again.</Alert>
-                            }
+                            } */}
                         </div>
                     </div>
                 </div>
@@ -313,6 +320,13 @@ function ContactUsPage() {
                         </div>
                         <br></br>
                         <div className='centeredText'>
+                            {/* Display a SUCCESS or OOPS message depending on what the outcome is */}
+                            {formSubmissionUserStatus == 'success' &&
+                                <Alert variant='success'>Email sent!</Alert>
+                            }
+                            {formSubmissionUserStatus == 'error' &&
+                                <Alert variant='warning'>Uh oh! Something went wrong. Please try again.</Alert>
+                            }
                             <button type='submit' value='submit' className='btn btn-primary' disabled={statusUser == 'Sending...'}>
                                 {statusUser}
                             </button>
