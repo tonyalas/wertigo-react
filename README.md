@@ -1,3 +1,6 @@
+# ARCHIVED VERSION
+Please visit https://github.com/tonyalas/wertigo for the latest updates of this project.
+
 # Wertigo
 
 Think Local, Live Local.
